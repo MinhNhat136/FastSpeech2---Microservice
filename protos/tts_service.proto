@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package tts;
+
+service TTSService {
+  rpc Synthesize(SynthesizeRequest) returns (SynthesizeResponse);
+
+  rpc SynthesizeStream(SynthesizeRequest) returns (stream AudioChunk);
+}
+
+message SynthesizeRequest {
+  string text = 1;
+
+  int32 speaker_id = 2;
+
+  float pitch_control = 3;
+
+  float energy_control = 4;
+
+  float duration_control = 5;
+
+  string audio_format = 6;
+}
+
+message SynthesizeResponse {
+  bytes audio_data = 1;
+
+  int32 sample_rate = 2;
+
+  string audio_format = 3;
+
+  float duration = 4;
+}
+
+message AudioChunk {
+  bytes audio_data = 1;
+
+  int32 sequence = 2;
+
+  bool is_final = 3;
+}

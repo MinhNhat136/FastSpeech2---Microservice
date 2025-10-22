@@ -1,5 +1,6 @@
 import re
 import argparse
+import time
 from string import punctuation
 
 import torch
@@ -15,7 +16,6 @@ from dataset import TextDataset
 from text import text_to_sequence
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 
 def read_lexicon(lex_path):
     lexicon = {}
@@ -211,4 +211,6 @@ if __name__ == "__main__":
 
     control_values = args.pitch_control, args.energy_control, args.duration_control
 
+    start_time = time.time()
     synthesize(model, args.restore_step, configs, vocoder, batchs, control_values)
+    print("--- %s seconds ---" % (time.time() - start_time))

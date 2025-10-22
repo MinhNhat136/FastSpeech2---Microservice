@@ -194,6 +194,8 @@ def synth_samples(targets, predictions, vocoder, model_config, preprocess_config
             stats,
             ["Synthetized Spectrogram"],
         )
+        path_save = os.path.join(path, "{}.png".format(basename))
+        os.makedirs(os.path.dirname(path_save), exist_ok=True)
         plt.savefig(os.path.join(path, "{}.png".format(basename)))
         plt.close()
 
