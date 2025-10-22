@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Training outputs (these are generated during training and can be large)
+output/
+log/
+*.log
+
+# Checkpoints and models (exclude these if you want to provide them separately)
+# Uncomment the lines below if you plan to mount models as volumes
+# model/
+# hifigan/
+# preprocessed_data/
+
+# Audio samples for testing (optional, can be included if needed)
+# audio/
+
+# Documentation
+*.md
+README*
+docs/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Other
+.env
+.env.local
+*.bak
+*.tmp
+*.temp
