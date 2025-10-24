@@ -42,13 +42,13 @@ env/
 .gitignore
 .gitattributes
 
-# Training outputs (these are generated during training and can be large)
-output/
+# Training outputs (logs only, but keep checkpoints)
 log/
 *.log
 
-# Checkpoints and models (exclude these if you want to provide them separately)
-# Uncomment the lines below if you plan to mount models as volumes
+# Note: output/ and model directories are included to bundle trained models
+# If you prefer to mount these as volumes, uncomment the lines below:
+# output/
 # model/
 # hifigan/
 # preprocessed_data/
